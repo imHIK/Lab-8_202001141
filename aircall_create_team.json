@@ -1,0 +1,69 @@
+{
+    "nodeName": "aircall",
+    "name": "aircall_create_team",
+    "displayName": "Create a team",
+    "description": "Create a new team in aircall",
+    "resourceType": "ACTION",
+    "input": {
+        "type": "SCHEMA",
+        "schema": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name"
+            ]
+        },
+        "layout": {
+            "ui:submitButtonOptions": {
+                "norender": true
+            },
+            "team": {
+                "ui:title": "Name",
+                "ui:help": "The name of the team"
+            }
+        }
+    },
+    "output": {
+        "type": "SCHEMA",
+        "schema": {
+            "type": "object",
+            "properties": {
+                "team": {
+                    "type": "object",
+                    "title": "Team",
+                    "properties": {
+                        "id": {
+                            "type": "integer",
+                            "title": "Id"
+                        },
+                        "name": {
+                            "type": "string",
+                            "title": "Name"
+                        },
+                        "direct_link": {
+                            "type": "string",
+                            "title": "Direct_Link"
+                        },
+                        "created_at": {
+                            "type": "string",
+                            "title": "Created_At"
+                        },
+                        "users": {
+                            "type": "array",
+                            "title": "Users",
+                            "items": {
+                                "type": "integer",
+                                "title": "User"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "layout": null
+    }
+}
